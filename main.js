@@ -11,9 +11,23 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 // creazione bottone 'genera'
 
 const play = document.getElementById('play');
+const difficolta = document.getElementById('difficolta');
+const griglia = document.querySelector('.griglia');
 
+// se clicco il bottone play genero la tabella
+// se clicco il bottone play scelgo la difficoltà
 play.addEventListener('click', function () {
   griglia.classList.remove('hidden');
+  if (difficolta.value === 'difficolta1') {
+    tabella1();
+    console.log('difficoltà 1');
+  } else if (difficolta.value === 'difficolta2') {
+    tabella2();
+    console.log('difficoltà 2');
+  } else if (difficolta.value === 'difficolta3') {
+    tabella3();
+    console.log('difficoltà 3');
+  }
 });
 
 function creazioneCelle(tag, classe, contenuto) {
@@ -24,16 +38,47 @@ function creazioneCelle(tag, classe, contenuto) {
   return cell;
 }
 
-const griglia = document.querySelector('.griglia');
+// ho creato tre funzioni diverse da mettere nell'if
+function tabella1() {
+  for (let i = 1; i <= 100; i++) {
+    const numeriCelle = creazioneCelle('div', 'casella', i);
+    griglia.append(numeriCelle);
 
-for (let i = 1; i <= 100; i++) {
-  const numeriCelle = creazioneCelle('div', 'casella', i);
-  griglia.append(numeriCelle);
-
-  // al click in una cella fai comparire il relativo numero in console
-  // aggiungi la classe con il nuovo colore
-  numeriCelle.addEventListener('click', function () {
-    numeriCelle.classList.add('blue');
-    console.log(i);
-  });
+    // al click in una cella fai comparire il relativo numero in console
+    // aggiungi la classe con il nuovo colore
+    numeriCelle.addEventListener('click', function () {
+      numeriCelle.classList.add('blue');
+      console.log(i);
+    });
+  }
 }
+
+function tabella2() {
+  for (let i = 1; i <= 81; i++) {
+    const numeriCelle = creazioneCelle('div', 'casella2', i);
+    griglia.append(numeriCelle);
+
+    // al click in una cella fai comparire il relativo numero in console
+    // aggiungi la classe con il nuovo colore
+    numeriCelle.addEventListener('click', function () {
+      numeriCelle.classList.add('blue');
+      console.log(i);
+    });
+  }
+}
+
+function tabella3() {
+  for (let i = 1; i <= 49; i++) {
+    const numeriCelle = creazioneCelle('div', 'casella3', i);
+    griglia.append(numeriCelle);
+
+    // al click in una cella fai comparire il relativo numero in console
+    // aggiungi la classe con il nuovo colore
+    numeriCelle.addEventListener('click', function () {
+      numeriCelle.classList.add('blue');
+      console.log(i);
+    });
+  }
+}
+
+// non riesco a far sparire la prima tabella una volta generata la seconda

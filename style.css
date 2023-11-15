@@ -14,6 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -25,9 +26,10 @@ header {
 
 #play {
   padding: 0.625rem 1rem;
-  border-radius: 1.875rem;
-  border: 5px solid lightcoral;
+  border-radius: 1rem;
+  border: 2px solid lightcoral;
   cursor: pointer;
+  background-color: lightsteelblue;
 }
 
 main {
@@ -40,19 +42,39 @@ main {
 }
 
 .griglia {
-  height: 600px;
-  width: 600px;
-  background-color: lightgreen;
+  max-height: 600px;
+  max-width: 600px;
+  background-color: lightcoral;
   display: flex;
   flex-wrap: wrap;
   align-content: start;
 }
 
 .casella {
-  background-color: lightgreen;
+  background-color: lightcoral;
   height: calc(100% / 10);
   width: calc(100% / 10);
   border: 1px solid black;
+  text-align: center;
+  line-height: calc(600px / 10);
+}
+
+.casella2 {
+  background-color: lightcoral;
+  height: calc(100% / 9);
+  width: calc(100% / 9);
+  border: 1px solid black;
+  text-align: center;
+  line-height: calc(600px / 9);
+}
+
+.casella3 {
+  background-color: lightcoral;
+  height: calc(100% / 7);
+  width: calc(100% / 7);
+  border: 1px solid black;
+  text-align: center;
+  line-height: calc(600px / 7);
 }
 
 .blue {
@@ -64,7 +86,7 @@ footer {
 }
 
 .fa-heart {
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 .boolean {
